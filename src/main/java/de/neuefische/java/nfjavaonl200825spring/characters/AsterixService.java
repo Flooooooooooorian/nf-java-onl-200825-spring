@@ -17,7 +17,6 @@ public class AsterixService {
         return repo.findAll();
     }
 
-
     public AsterixCharacter saveNewAsterixCharacter(AsterixCharacterCreationDto asterixCharacter) {
         AsterixCharacter newCharacter = new AsterixCharacter(
                 idService.generateRandomId(),
@@ -40,10 +39,9 @@ public class AsterixService {
         }
     }
 
-    public boolean deleteCharById(String id) {
+    public void deleteCharById(String id) {
         if (repo.existsById(id)) {
             repo.deleteById(id);
-            return true;
         } else {
             throw new NoSuchElementException("No Character found with Id:" + id);
         }

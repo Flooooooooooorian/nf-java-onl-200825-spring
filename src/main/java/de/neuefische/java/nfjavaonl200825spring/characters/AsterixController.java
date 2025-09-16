@@ -34,7 +34,7 @@ public class AsterixController {
     }
 
     @DeleteMapping("/{id}")
-    public boolean deleteCharacter(@PathVariable String id){
-        return service.deleteCharById(id);
+    public void deleteCharacter(@PathVariable String id){
+        service.deleteCharById(id);
     }
 }
